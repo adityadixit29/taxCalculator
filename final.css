@@ -1,0 +1,42 @@
+.result {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result .containerone {
+    height: 70vh;
+    border: 1px solid gray;
+    width: 70vw;
+    position: relative;
+
+}
+
+.result .containertwo {
+    height: 44vh;
+    border: 1px solid gray;
+    width: 70vw;
+    position: absolute;
+    top: 87px;
+    left: -51px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px 50px;
+    text-align: center;
+}
+
+.rtext {
+    margin-bottom: 10px;
+}
+.btn{
+    padding: 5px;
+    color: white;
+    background-color: blue;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+}

@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+*{
+    font-family: "Open Sans", "sans-serif";
+}
+.container{
+    border: 2px solid gray;
+    height: 60vh;
+    width: 60vw;
+}
+.mainContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}   
+#form{
+    padding: 80px 20px;
+    width: 85%;
+    display: grid;
+    gap: 10px;
+}
+.text{
+    display: flex;
+    gap: 5px;
+    font-weight: 500;
+   
+}
+.input{
+    position: relative;
+}
+.btn{
+    margin-top: 30px;
+    width: 100%;
+    background-color: #2a52be;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    padding: 5px;
+}
+#gross{
+    width: 100%;
+    padding: 5px;
+}
+#extra{
+    width: 100%;
+    padding: 5px;
+}
+#opt{
+    width: 102%;
+    padding: 5px;
+}
+#deduct{
+    width: 100%;
+    padding: 5px;
+}
+
+
+
+
+
+.err {
+    border: 2px solid gray;
+    width: 3vw;
+    height: 3vh;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 23px;
+    right: 0px;
+}
+
+.err::before {
+    content: '!';
+    color: gray;
+    font-size: 16px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    border: 1px solid gray;
+    padding: 0px 7px;
+    border-radius: 50%;
+
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: gray;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 30px;
+    left: -53px;
+}
+
+.error .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: gray;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 30px;
+    left: -53px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.error:hover .tooltiptext {
+    visibility: visible;
+}

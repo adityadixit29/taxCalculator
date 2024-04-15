@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="final.css">
+    <title>Document</title>
+    <style>
+     
+    </style>
+</head>
+
+<body>
+    <div class="result">
+        <div class="containerone">
+            <div class="containertwo">
+                <p class="rtext">Your Overall Income will be</p>
+                <p id="gross"></p>
+                <p>after tax deduction</p>
+                <button class="btn">Close</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const gross = parseInt(localStorage.getItem('gross'));
+        const extra = parseInt(localStorage.getItem("extra"));
+        const opt = localStorage.getItem("opt");
+        const deduct = parseInt(localStorage.getItem("deduct"));
+        let tax = 0;
+
+        if (gross + extra - deduct < 800000) {
+            document.getElementById('gross').textContent = "No Tax";
+        } else if (gross + extra - deduct > 800000) {
+            if (opt == "<40") {
+                tax = .3 * (gross + extra - deduct);
+            } else if (opt == ">=40 but <60") {
+                tax = .4 * (gross + extra - deduct);
+            } else {
+                tax = .1 * (gross + extra - deduct);
+            }
+            let result = gross + extra - tax;
+            document.getElementById('gross').textContent = result;
+        }
+    </script>
+</body>
+
+</html>

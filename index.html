@@ -4,78 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Tax Calculator</title>
-    <style>
-        .err {
-            border: 2px solid gray;
-            width: 3vw;
-            height: 3vh;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            top: 23px;
-            right: 0px;
-        }
-        
-        .err::before {
-            content: '!';
-            color: gray;
-            font-size: 16px;
-        }
-        
-        .tooltip {
-            position: relative;
-            display: inline-block;
-            border-bottom: 1px dotted black;
-            border: 1px solid gray;
-            padding: 0px 7px;
-            border-radius: 50%;
-        
-        }
-        
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            width: 120px;
-            background-color: gray;
-            color: #fff;
-            text-align: center;
-            border-radius: 6px;
-            padding: 5px 0;
-        
-            /* Position the tooltip */
-            position: absolute;
-            z-index: 1;
-            bottom: 30px;
-            left: -53px;
-        }
-        
-        .error .tooltiptext {
-            visibility: hidden;
-            width: 120px;
-            background-color: gray;
-            color: #fff;
-            text-align: center;
-            border-radius: 6px;
-            padding: 5px 0;
-        
-            /* Position the tooltip */
-            position: absolute;
-            z-index: 1;
-            bottom: 30px;
-            left: -53px;
-        }
-        
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-        }
-        
-        .error:hover .tooltiptext {
-            visibility: visible;
-        }
-    </style>
 </head>
 
 <body>
@@ -85,29 +15,29 @@
                 <div class="input">
                     <div class="text">Enter gross annual income
                         <div class="tooltip">?
-                            <span class="tooltiptext">Tooltip text</span>
+                            <span class="tooltiptext">Gross annual salary is your annual salary with deduction</span>
                         </div>
 
                     </div>
                     <input type="text" name="" id="gross" placeholder="Enter gross annual income">
 
-                    <div class="error" id="grossError"> <span class="tooltiptext">Tooltip text</span></div>
+                    <div class="error" id="grossError"> <span class="tooltiptext"></span></div>
                     <!-- Error message container -->
                 </div>
                 <div class="input">
                     <div class="text">Enter extra income
                         <div class="tooltip">?
-                            <span class="tooltiptext">Tooltip text</span>
+                            <span class="tooltiptext">Extra income is yours income other than your salary</span>
                         </div>
                     </div>
                     <input type="text" name="" id="extra" placeholder="Enter extra income">
-                    <div class="error" id="extraError"> <span class="tooltiptext">Tooltip text</span></div>
+                    <div class="error" id="extraError"> <span class="tooltiptext"></span></div>
                     <!-- Error message container -->
                 </div>
                 <div class="input">
                     <div class="text">Enter age group
                         <div class="tooltip">?
-                            <span class="tooltiptext">Tooltip text</span>
+                            <span class="tooltiptext">Tax deduction percentage is dependent on age</span>
                         </div>
                     </div>
                     <select name="" id="opt">
@@ -121,85 +51,18 @@
                 <div class="input">
                     <div class="text">Enter total applicable deduction
                         <div class="tooltip">?
-                            <span class="tooltiptext">Tooltip text</span>
+                            <span class="tooltiptext">If there is any deduction please enter the deduction</span>
                         </div>
                     </div>
                     <input type="text" name="" id="deduct" placeholder="Enter total applicable deduction">
-                    <div class="error" id="deductError"> <span class="tooltiptext">Tooltip text</span></div>
+                    <div class="error" id="deductError"> <span class="tooltiptext"></span></div>
                     <!-- Error message container -->
                 </div>
                 <input type="submit" value="Submit" class="btn">
             </form>
         </div>
     </div>
-    <script>
-        const form = document.getElementById("form");
-    
-        form.addEventListener('submit', function (e) {
-            e.preventDefault(); // Prevent default form submission
-    
-            const gross = document.getElementById("gross");
-            const extra = document.getElementById("extra");
-            const opt = document.getElementById("opt");
-            const deduct = document.getElementById("deduct");
-    
-            let hasError = false; // Flag to track if any error occurs
-    
-            // Validate gross income
-            if (!validateInput(gross.value)) {
-                showError("grossError", "Enter only numbers for gross income.");
-                hasError = true;
-            } 
-    
-            // Validate extra income
-            if (!validateInput(extra.value)) {
-                showError("extraError", "Please enter only numbers for extra income.");
-                hasError = true;
-            } 
-    
-            // Validate age group selection
-            if (opt.value === "") {
-                showError("optError", "Please select an age group."); // Add error handling for age group
-                hasError = true;
-            }
-    
-            // Validate deduction
-            if (!validateInput(deduct.value)) {
-                showError("deductError", "Please enter only numbers for deduction.");
-                hasError = true;
-            }
-    
-            // If no error, submit the form
-            if (!hasError) {
-                localStorage.setItem('gross', gross.value);
-                localStorage.setItem('extra', extra.value);
-                localStorage.setItem('opt', opt.value);
-                localStorage.setItem('deduct', deduct.value);
-                window.location.href = "final.html";
-            }
-        });
-    
-        function validateInput(value) {
-            if (value === "") {
-                return false; // Handle empty input
-            } else if (isNaN(value)) {
-                return false; // Handle non-numeric characters
-            }
-            return true;
-        }
-    
-        function showError(errorId, errorMessage) {
-            const errorElement = document.getElementById(errorId);
-            errorElement.classList.add('err');
-    
-            // Update tooltip text based on errorMessage
-            const tooltipText = errorElement.querySelector('.tooltiptext');
-            tooltipText.textContent = errorMessage;
-        }
-    
-    
-    </script>
-    
+    <script src="./js/index.js"></script>
 </body>
 
 </html>

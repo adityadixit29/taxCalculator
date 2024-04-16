@@ -1,7 +1,7 @@
 
 # Tax Calculator Application
 
-In this project we have build the Tax Calculator Application
+In this project we have built the Tax Calculator Application
 
 ## Technologies Used
 
